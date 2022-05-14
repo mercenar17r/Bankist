@@ -470,7 +470,7 @@ console.log(overalBalance);
 const overalBalance2 = accounts
   .flatMap(acc => acc.movements)
   .reduce((acc, mov) => acc + mov, 0);
-console.log(overalBalance2);*/
+console.log(overalBalance2);
 //sorting strings
 const owners = ['Jonas', 'Zach', 'Adam', 'Martha'];
 
@@ -496,4 +496,55 @@ movements.sort((a, b) => {
   if (a > b) return -1;
   if (a < b) return1;
 });
-console.log(movements);
+console.log(movements);*/
+
+const arr = [1, 2, 3, 4, 5, 6, 7];
+console.log(new Array(1, 2, 3, 4, 5, 6, 7));
+
+//Empty arrays +fill method
+
+const x = new Array(7);
+console.log(x);
+//console.log(x.map(() => 5));
+x.fill(1);
+x.fill(1, 3, 5);
+console.log(x);
+arr.fill(23, 2, 6);
+console.log(arr);
+//Array.from
+
+const y = Array.from({ length: 7 }, () => 1);
+console.log(y);
+
+const z = Array.from({ length: 7 }, () => (_, i) => i + 1);
+console.log(z);
+const movementsUI = Array.from(document.querySelectorAll('.movements__value'));
+console.log(movementsUI);
+labelBalance.addEventListener('click', function () {
+  const movementsUI = Array.from(
+    document.querySelectorAll('.movements__value')
+  );
+
+  console.log(movementsUI.map(el => el.textContent.replace()));
+});
+//exercise 1
+const bankDepositSum = accounts
+  .flatMap(acc => acc.movements)
+  .filter(mov => mov > 0)
+  .reduce((sum, cur) => sum + cur, 0);
+
+console.log(bankDepositSum);
+
+//const numDeposits1000 = accounts
+//.flatMap(acc => acc.movements)
+//.filter(mov => mov >= 1000).length;
+const numDeposits1000 = accounts
+  .flatMap(acc => acc.movements)
+  .reduce((count, cur) => (cur >= 1000 ? count + 1 : count), 0);
+console.log(numDeposits1000);
+//PRefixed ++ opreator
+let a = 10;
+console.log(++a);
+console.log(a);
+
+//numbers si separatoes
